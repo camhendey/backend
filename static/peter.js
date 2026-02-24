@@ -586,7 +586,8 @@
   const submit = async () => {
     await ensureSession();
     const question = questionInput.value || "";
-    const petitionForSubmit = petitionSegment;
+    // Prefer the extracted facade segment; if none, fall back to the full raw petition
+    const petitionForSubmit = petitionSegment || realPetition;
 
     if (!petitionForSubmit) {
       const { text, isError, isWarning } = pickRandomStatusMessage();
