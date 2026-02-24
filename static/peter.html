@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Peter Petition Input</title>
+    <link rel="stylesheet" href="/static/peter.css" />
+  </head>
+  <body>
+    <main class="terminal" aria-label="Windows CMD style interface">
+      <div id="loginContainer">
+        <div class="line" id="userIdLine">
+          <span class="prompt">C:\&gt;</span>
+          <span class="label">User ID:</span>
+          <input id="userIdInput" class="input" type="text" autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="line hidden" id="passwordRow">
+          <span class="prompt">C:\&gt;</span>
+          <span class="label">Password:</span>
+          <input id="passwordInput" class="input" type="password" autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="line hidden" id="loginErrorRow">
+          <span class="prompt">C:\&gt;</span>
+          <span id="loginErrorText" class="output error"></span>
+        </div>
+      </div>
+
+      <div id="postLoginLoadingContainer" class="hidden">
+        <div class="loading-output" id="postLoginLoadingOutput"></div>
+      </div>
+
+      <div id="mainTerminal" class="hidden">
+      <div class="line" id="petitionLine">
+        <span class="prompt">C:\&gt;</span>
+        <span class="label">Access code:</span>
+        <input id="petition" class="input" type="text" autocomplete="off" spellcheck="false" />
+      </div>
+
+      <div class="line hidden" id="questionRow">
+        <span class="prompt">C:\&gt;</span>
+        <span class="label">Query:</span>
+        <input id="question" class="input" type="text" autocomplete="off" spellcheck="false" />
+      </div>
+
+      <div class="line hidden" id="loadingRow">
+        <div class="loading-output" id="loadingOutput"></div>
+      </div>
+
+      <div class="line hidden" id="resultRow" aria-live="polite">
+        <span class="prompt">C:\&gt;</span>
+        <span class="label">Result:</span>
+        <pre id="realPetition" class="output"></pre>
+      </div>
+
+      <div class="line hidden" id="newQueryRow">
+        <span class="prompt">C:\&gt;</span>
+        <span class="label">Submit new Query (yes/no):</span>
+        <input id="newQueryInput" class="input" type="text" autocomplete="off" spellcheck="false" />
+      </div>
+      </div>
+    </main>
+
+    <script src="/static/peter.js"></script>
+  </body>
+</html>

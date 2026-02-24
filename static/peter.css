@@ -1,0 +1,121 @@
+:root {
+  color-scheme: dark;
+  --bg: #000000;
+  --panel: #000000;
+  --text: #c0c0c0;
+  --muted: #808080;
+  --accent: #00ff00;
+  --danger: #ff5555;
+  --ok: #00ff00;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Consolas, "Lucida Console", "Courier New", monospace;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* When a line is hidden, it must stay hidden (overrides .line's display: flex) */
+.line.hidden {
+  display: none !important;
+}
+
+.terminal {
+  padding: 10px 12px;
+}
+
+.line {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  white-space: pre;
+  font-size: 16px;
+  line-height: 1.35;
+  margin: 2px 0;
+}
+
+.prompt {
+  flex: 0 0 auto;
+}
+
+.label {
+  flex: 0 0 auto;
+}
+
+.input {
+  flex: 1 1 auto;
+  min-width: 80px;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.output {
+  flex: 1 1 auto;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.output.error {
+  color: #ff4444;
+}
+
+.output.warning {
+  color: #ff9933;
+}
+
+.loading-output {
+  flex: 1 1 auto;
+  max-height: 280px;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 6px 0;
+}
+
+.loading-line {
+  margin: 2px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.loading-line.error {
+  color: #ff4444;
+}
+
+.loading-line.success {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.loading-line.breach-abort {
+  color: #ff2222;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 8px;
+}
+
+@keyframes breach-flash {
+  0%, 40% {
+    background-color: #000000;
+  }
+  50%, 100% {
+    background-color: #330000;
+  }
+}
+
+body.breach-mode {
+  animation: breach-flash 0.4s linear infinite;
+}
